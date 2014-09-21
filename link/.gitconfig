@@ -1,0 +1,23 @@
+[branch]
+	autosetuprebase = always
+[core]
+	editor = vim
+	pager = less -XF
+[alias]
+	logweek = log --since='1 week ago' --oneline --author=amnong --date=short
+	dw = diff --color-words -b
+	logdw = log -p --color-words --decorate
+	logstat = log --stat=320,160 --decorate
+	showdw = show --color-words
+	st = status
+	graph = log --graph --all --oneline --decorate
+	l = log --decorate --oneline
+[color]
+	ui = true
+	diff = auto
+[diff]
+	wordRegex = [A-Za-z0-9_]+|[^[:space:]]
+[color "diff"]
+	whitespace = red reverse
+[push]
+	default = upstream

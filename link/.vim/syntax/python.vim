@@ -375,7 +375,7 @@ let b:current_syntax = "python"
 
 " Amnon's additions: better tabbing
 set expandtab
-set textwidth=79
+"set textwidth=119
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4

@@ -1,0 +1,9 @@
+*.tmp
+*.swp
+*.pyc
+*.pyo
+*.bak
+*.egg-info
+*.EGG-INFO
+.DS_Store
+

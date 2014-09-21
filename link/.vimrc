@@ -28,8 +28,9 @@ set ignorecase		" Do case insensitive matching
 "set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
-"set hidden             " Hide buffers when they are abandoned
-"set mouse=a		" Enable mouse usage (all modes)
+set hidden              " Hide buffers when they are abandoned
+set mouse=a		" Enable mouse usage (all modes)
+set scrolloff=3         " Enable a 3-lines scroloff
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
@@ -49,3 +50,21 @@ let g:miniBufExplModSelTarget = 1
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
+autocmd FileType html set sw=2
+autocmd FileType html set ts=2
+autocmd FileType html set sts=2
+autocmd FileType html set textwidth=0
+
+set nobackup
+set backspace=2
+
+" Highlight occurences of word uncer cursor
+autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+
+" PyLint compiler
+"autocmd FileType python compiler pylint
+
+
+" iTerm2 Profiles
+autocmd VimEnter * silent! !printf '\033]50;SetProfile=Editor\a\n'
+autocmd VimLeave * silent! !printf '\033]50;SetProfile=Default\a'
