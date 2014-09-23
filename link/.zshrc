@@ -77,7 +77,11 @@ HISTFILESIZE=200000
 # virtualenvwrapper stuff
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+if [ `uname` == "Darwin" ]; then
+  export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+else
+  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+fi
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 
 source /usr/local/bin/virtualenvwrapper_lazy.sh
